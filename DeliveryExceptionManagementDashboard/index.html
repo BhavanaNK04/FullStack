@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Exception Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Delivery Exception Management</h1>
+
+<!-- FORM -->
+<div class="form-container">
+    <h2>Report Delivery Issue</h2>
+    <form id="exceptionForm">
+
+        <input type="text" id="deliveryId" placeholder="Delivery ID" required>
+        <input type="text" id="customerName" placeholder="Customer Name" required>
+
+        <select id="issueType" required>
+            <option value="">Select Issue Type</option>
+            <option>Address Not Found</option>
+            <option>Customer Not Available</option>
+            <option>Payment Issue</option>
+            <option>Package Damaged</option>
+        </select>
+
+        <div class="priority">
+            <label><input type="radio" name="priority" value="Low" required> Low</label>
+            <label><input type="radio" name="priority" value="Medium"> Medium</label>
+            <label><input type="radio" name="priority" value="High"> High</label>
+        </div>
+
+        <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+    <select id="filterType">
+        <option value="All">All Issue Types</option>
+        <option>Address Not Found</option>
+        <option>Customer Not Available</option>
+        <option>Payment Issue</option>
+        <option>Package Damaged</option>
+    </select>
+
+    <select id="filterStatus">
+        <option value="All">All Status</option>
+        <option>Open</option>
+        <option>Resolved</option>
+    </select>
+</div>
+
+<!-- TABLE -->
+<table>
+    <thead>
+        <tr>
+            <th>Delivery ID</th>
+            <th>Customer</th>
+            <th>Issue Type</th>
+            <th>Priority</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
